@@ -1,12 +1,295 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GamerBase</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Wizard</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
-  <script src="./scripts/index.js"></script>
+
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="left-section">
+
+    <div class="brand">
+
+      <span class="material-icons">sports_esports</span>
+      <h2>GamerBase</h2>
+    </div>
+
+    <div class="stepper">
+
+      <div class="step-item active">
+        <div class="step-indicator">
+          <div class="step-circle">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-text">
+          <h4>Gamer Profile</h4>
+          <p>Identity & Security</p>
+        </div>
+      </div>
+
+      <div class="step-item active">
+        <div class="step-indicator">
+          <div class="step-circle">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-text">
+          <h4>Preferences</h4>
+          <p>Gaming Style</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-indicator">
+          <div class="step-circle">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-text">
+          <h4>Avatar</h4>
+          <p>Theme & Settings</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-indicator">
+          <div class="step-circle">4</div>
+        </div>
+        <div class="step-text">
+          <h4>Review</h4>
+          <p>Confirm Details</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="left-banner">
+      <div class="banner-content">
+        <h3>Level up your Experience</h3>
+        <p>Join thousands of players and find your next squad today.</p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- RIGHT -->
+  <main class="right-section">
+
+    <div class="signup-card">
+
+      <header class="card-header">
+        <h2>Signup Wizard</h2>
+        <p>Four quick steps to set up your gaming profile.</p>
+      </header>
+
+      <!--form 1 -->
+      <section class="step">
+        <header class="step-header">
+          <h4>01 / GAMER PROFILE</h4>
+        </header>
+
+        <div class="step-content">
+
+          <div class="input-group">
+            <label>Gamer Tag (Username)</label>
+            <div class="input-wrapper">
+              <input type="text" placeholder="e.g Hunter99" />
+              <span class="material-icons input-icon">person</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Email Address</label>
+            <div class="input-wrapper">
+              <input type="email" placeholder="you@example.com" />
+              <span class="material-icons input-icon">mail</span>
+            </div>
+          </div>
+
+          <div class="security">
+            <div class="security-field">
+              <label>Password</label>
+              <input type="password" />
+            </div>
+
+            <div class="security-field">
+              <label>Confirm Password</label>
+              <input type="password" />
+            </div>
+          </div>
+
+        </div>
+
+        <footer class="step-footer">
+          <span>Step 1 of 4</span>
+          <button>Next</button>
+        </footer>
+      </section>
+
+      <!-- form 2 -->
+      <section class="step">
+        <header class="step-header">
+          <h4>02 / GAMING PREFERENCES</h4>
+        </header>
+
+        <div class="step-content">
+
+          <label>Favorite Game Genre</label>
+          <select>
+            <option>FPS</option>
+            <option>Action</option>
+            <option>Sports</option>
+            <option>Simulation</option>
+          </select>
+
+          <p>Skill Level</p>
+          <div class="skill-level">
+            <label class="skill-card">
+              <input type="radio" name="skill">
+              <strong>Beginner</strong>
+              <span>Just Starting</span>
+            </label>
+
+            <label class="skill-card">
+              <input type="radio" name="skill">
+              <strong>Intermediate</strong>
+              <span>Casual Player</span>
+            </label>
+
+            <label class="skill-card">
+              <input type="radio" name="skill">
+              <strong>Pro</strong>
+              <span>Competitive</span>
+            </label>
+          </div>
+
+          <p>Platforms</p>
+          <div class="platforms">
+
+            <div class="platform-col">
+              <label class="platform-card">
+                <span class="material-icons">desktop_windows</span>
+                <span>PC</span>
+                <input type="checkbox" />
+              </label>
+
+              <label class="platform-card">
+                <span class="material-icons">sports_esports</span>
+                <span>Play Station</span>
+                <input type="checkbox" />
+              </label>
+            </div>
+
+            <div class="platform-col">
+              <label class="platform-card">
+                <span class="material-icons">videogame_asset</span>
+                <span>Xbox</span>
+                <input type="checkbox" />
+              </label>
+
+              <label class="platform-card">
+                <span class="material-icons">smartphone</span>
+                <span>Mobile</span>
+                <input type="checkbox" />
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <footer class="step-footer">
+          <span>Step 2 of 4</span>
+          <div>
+            <button>Back</button>
+            <button>Next</button>
+          </div>
+        </footer>
+      </section>
+
+      <!-- form 3 -->
+      <section class="step">
+        <header class="step-header">
+          <h4>03 / AVATAR & SETTINGS</h4>
+        </header>
+
+        <div class="step-content">
+
+          <p>Select Avatar</p>
+          <div class="avatar-grid">
+            <div class="avatar-card">
+              <div class="avatar"><span class="material-icons">person</span></div>
+              <p>Rogue</p>
+            </div>
+            <div class="avatar-card">
+              <div class="avatar"><span class="material-icons">person</span></div>
+              <p>Sniper</p>
+            </div>
+            <div class="avatar-card">
+              <div class="avatar"><span class="material-icons">person</span></div>
+              <p>Tank</p>
+            </div>
+            <div class="avatar-card">
+              <div class="avatar"><span class="material-icons">person</span></div>
+              <p>Mage</p>
+            </div>
+          </div>
+
+          <p>Theme Preferences</p>
+          <div class="theme-grid">
+            <div class="theme-card">Dark</div>
+            <div class="theme-card">Neon</div>
+            <div class="theme-card">Retro</div>
+          </div>
+
+        </div>
+
+        <footer class="step-footer">
+          <span>Step 3 of 4</span>
+          <div>
+            <button>Back</button>
+            <button>Next</button>
+          </div>
+        </footer>
+      </section>
+
+      <!-- form 4 -->
+      <section class="step">
+        <header class="step-header">
+          <h4>04 / REVIEW & SUBMIT</h4>
+        </header>
+
+        <div class="step-content summary">
+          <p>Gamer Tag: </p>
+          <p>Email: </p>
+          <p>Genre:</p>
+          <p>Skill Level: </p>
+          <p>Platform: </p>
+          <p>Theme: </p>
+        </div>
+
+        <footer class="step-footer">
+          <span>Step 4 of 4</span>
+          <div>
+            <button>Back</button>
+            <button>Submit</button>
+          </div>
+        </footer>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+<script src="./scripts/index.js"></script>
 </body>
 </html>
