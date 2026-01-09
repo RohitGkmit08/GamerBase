@@ -93,6 +93,7 @@
 
       <!--form 1 -->
       <section class="step">
+        <form>
         <header class="step-header">
           <h4>01 / GAMER PROFILE</h4>
         </header>
@@ -102,28 +103,32 @@
           <div class="input-group">
             <label>Gamer Tag (Username)</label>
             <div class="input-wrapper">
-              <input type="text" placeholder="e.g Hunter99" />
+              <input type="text" id="username" placeholder="e.g Hunter99" required />
               <span class="material-icons input-icon">person</span>
             </div>
+            <span class="error-message" id="error-username"></span>
           </div>
 
           <div class="input-group">
             <label>Email Address</label>
             <div class="input-wrapper">
-              <input type="email" placeholder="you@example.com" />
+              <input type="email" id="email" placeholder="you@example.com" required />
               <span class="material-icons input-icon">mail</span>
             </div>
+            <span class="error-message" id="error-email"></span>
           </div>
 
           <div class="security">
             <div class="security-field">
               <label>Password</label>
-              <input type="password" />
+              <input type="password" id="password" required />
+              <span class="error-message" id="error-password"></span>
             </div>
 
             <div class="security-field">
               <label>Confirm Password</label>
-              <input type="password" />
+              <input type="password" id="confirm-password" required />
+              <span class="error-message" id="error-confirm-password"></span>
             </div>
           </div>
 
@@ -131,78 +136,90 @@
 
         <footer class="step-footer">
           <span>Step 1 of 4</span>
-          <button>Next</button>
+          <button type="button" class="btn-next">Next</button>
         </footer>
+        </form>
       </section>
 
       <!-- form 2 -->
       <section class="step">
+        <form>
         <header class="step-header">
           <h4>02 / GAMING PREFERENCES</h4>
         </header>
 
         <div class="step-content">
 
-          <label>Favorite Game Genre</label>
-          <select>
-            <option>FPS</option>
-            <option>Action</option>
-            <option>Sports</option>
-            <option>Simulation</option>
-          </select>
-
-          <p>Skill Level</p>
-          <div class="skill-level">
-            <label class="skill-card">
-              <input type="radio" name="skill">
-              <strong>Beginner</strong>
-              <span>Just Starting</span>
-            </label>
-
-            <label class="skill-card">
-              <input type="radio" name="skill">
-              <strong>Intermediate</strong>
-              <span>Casual Player</span>
-            </label>
-
-            <label class="skill-card">
-              <input type="radio" name="skill">
-              <strong>Pro</strong>
-              <span>Competitive</span>
-            </label>
+          <div class="input-group">
+            <label>Favorite Game Genre</label>
+            <select id="genre" required>
+              <option value="">Select a genre</option>
+              <option>FPS</option>
+              <option>Action</option>
+              <option>Sports</option>
+              <option>Simulation</option>
+            </select>
+            <span class="error-message" id="error-genre"></span>
           </div>
 
-          <p>Platforms</p>
-          <div class="platforms">
-
-            <div class="platform-col">
-              <label class="platform-card">
-                <span class="material-icons">desktop_windows</span>
-                <span>PC</span>
-                <input type="checkbox" />
+          <div class="input-group">
+            <p>Skill Level</p>
+            <div class="skill-level">
+              <label class="skill-card">
+                <input type="radio" name="skill" value="Beginner" required>
+                <strong>Beginner</strong>
+                <span>Just Starting</span>
               </label>
 
-              <label class="platform-card">
-                <span class="material-icons">sports_esports</span>
-                <span>Play Station</span>
-                <input type="checkbox" />
-              </label>
-            </div>
-
-            <div class="platform-col">
-              <label class="platform-card">
-                <span class="material-icons">videogame_asset</span>
-                <span>Xbox</span>
-                <input type="checkbox" />
+              <label class="skill-card">
+                <input type="radio" name="skill" value="Intermediate">
+                <strong>Intermediate</strong>
+                <span>Casual Player</span>
               </label>
 
-              <label class="platform-card">
-                <span class="material-icons">smartphone</span>
-                <span>Mobile</span>
-                <input type="checkbox" />
+              <label class="skill-card">
+                <input type="radio" name="skill" value="Pro">
+                <strong>Pro</strong>
+                <span>Competitive</span>
               </label>
             </div>
+            <span class="error-message" id="error-skill"></span>
+          </div>
 
+          <div class="input-group">
+            <p>Platforms</p>
+            <div class="platforms">
+
+              <div class="platform-col">
+                <label class="platform-card">
+                  <span class="material-icons">desktop_windows</span>
+                  <span>PC</span>
+                  <input type="checkbox" value="PC" name="platform" />
+                </label>
+
+                <label class="platform-card">
+                  <span class="material-icons">sports_esports</span>
+                  <span>Play Station</span>
+                  <input type="checkbox" value="Play Station" name="platform" />
+                </label>
+              </div>
+
+              <div class="platform-col">
+                <label class="platform-card">
+                  <span class="material-icons">videogame_asset</span>
+                  <span>Xbox</span>
+                  <input type="checkbox" value="Xbox" name="platform" />
+                </label>
+
+                <label class="platform-card">
+                  <span class="material-icons">smartphone</span>
+                  <span>Mobile</span>
+                  <input type="checkbox" value="Mobile" name="platform" />
+                </label>
+              </div>
+
+            </div>
+            <span class="error-message" id="error-platforms"></span>
           </div>
 
         </div>
@@ -210,45 +227,69 @@
         <footer class="step-footer">
           <span>Step 2 of 4</span>
           <div>
-            <button>Back</button>
-            <button>Next</button>
+            <button type="button" class="btn-back">Back</button>
+            <button type="button" class="btn-next">Next</button>
           </div>
         </footer>
+        </form>
       </section>
 
       <!-- form 3 -->
       <section class="step">
+        <form>
         <header class="step-header">
           <h4>03 / AVATAR & SETTINGS</h4>
         </header>
 
         <div class="step-content">
 
-          <p>Select Avatar</p>
-          <div class="avatar-grid">
-            <div class="avatar-card">
-              <div class="avatar"><span class="material-icons">person</span></div>
-              <p>Rogue</p>
+          <div class="input-group">
+            <p>Select Avatar</p>
+            <div class="avatar-grid">
+              <label class="avatar-card">
+                <img src="./assets/cute-woman-avatar-profile-vector-illustration_1058532-14592.avif" alt="Rogue avatar">
+                <p>Rogue</p>
+                <input type="radio" name="avatar" value="Rogue" required>
+              </label>
+
+              <label class="avatar-card">
+                <img src="./assets/smiling-young-man-illustration_1308-173524.avif" alt="Sniper avatar">
+                <p>Sniper</p>
+                <input type="radio" name="avatar" value="Sniper">
+              </label>
+
+              <label class="avatar-card">
+                <img src="./assets/smiling-young-man-illustration_1308-174669.avif" alt="Tank avatar">
+                <p>Tank</p>
+                <input type="radio" name="avatar" value="Tank">
+              </label>
+
+              <label class="avatar-card">
+                <img src="./assets/woman-with-long-dark-hair_1308-176666.avif" alt="Mage avatar">
+                <p>Mage</p>
+                <input type="radio" name="avatar" value="Mage">
+              </label>
             </div>
-            <div class="avatar-card">
-              <div class="avatar"><span class="material-icons">person</span></div>
-              <p>Sniper</p>
-            </div>
-            <div class="avatar-card">
-              <div class="avatar"><span class="material-icons">person</span></div>
-              <p>Tank</p>
-            </div>
-            <div class="avatar-card">
-              <div class="avatar"><span class="material-icons">person</span></div>
-              <p>Mage</p>
-            </div>
+            <span class="error-message" id="error-avatar"></span>
           </div>
 
-          <p>Theme Preferences</p>
-          <div class="theme-grid">
-            <div class="theme-card">Dark</div>
-            <div class="theme-card">Neon</div>
-            <div class="theme-card">Retro</div>
+          <div class="input-group">
+            <p>Theme Preferences</p>
+            <div class="theme-grid">
+              <label class="theme-card">
+                <span>Dark</span>
+                <input type="radio" name="theme" value="Dark" required>
+              </label>
+              <label class="theme-card">
+                <span>Neon</span>
+                <input type="radio" name="theme" value="Neon">
+              </label>
+              <label class="theme-card">
+                <span>Retro</span>
+                <input type="radio" name="theme" value="Retro">
+              </label>
+            </div>
+            <span class="error-message" id="error-theme"></span>
           </div>
 
         </div>
@@ -256,34 +297,47 @@
         <footer class="step-footer">
           <span>Step 3 of 4</span>
           <div>
-            <button>Back</button>
-            <button>Next</button>
+            <button type="button" class="btn-back">Back</button>
+            <button type="button" class="btn-next">Next</button>
           </div>
         </footer>
+        </form>
       </section>
 
       <!-- form 4 -->
       <section class="step">
+        <form>
         <header class="step-header">
           <h4>04 / REVIEW & SUBMIT</h4>
         </header>
 
         <div class="step-content summary">
-          <p>Gamer Tag: </p>
-          <p>Email: </p>
-          <p>Genre:</p>
-          <p>Skill Level: </p>
-          <p>Platform: </p>
-          <p>Theme: </p>
+          <p><strong>Gamer Tag:</strong> <span id="review-username"></span></p>
+          <p><strong>Email:</strong> <span id="review-email"></span></p>
+          <p><strong>Genre:</strong> <span id="review-genre"></span></p>
+          <p><strong>Skill Level:</strong> <span id="review-skill"></span></p>
+          <p><strong>Platforms:</strong> <span id="review-platforms"></span></p>
+          <p><strong>Avatar:</strong> <span id="review-avatar"></span></p>
+          <p><strong>Theme:</strong> <span id="review-theme"></span></p>
         </div>
 
         <footer class="step-footer">
           <span>Step 4 of 4</span>
           <div>
-            <button>Back</button>
-            <button>Submit</button>
+            <button type="button" class="btn-back">Back</button>
+            <button type="button" class="btn-submit">Submit</button>
           </div>
         </footer>
+        </form>
+      </section>
+
+      <!-- Success Section -->
+      <section class="step success-step">
+        <div class="step-content success-content">
+          <div class="success-message">
+            <p>Welcome to the Gaming Dashboard, <span id="success-username"></span>!</p>
+          </div>
+        </div>
       </section>
 
     </div>

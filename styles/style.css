@@ -41,7 +41,6 @@ body{
 .stepper {
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .step-item {
@@ -54,6 +53,8 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .step-circle {
@@ -65,19 +66,27 @@ body{
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  flex-shrink: 0;
+  background: white;
+  position: relative;
+  z-index: 1;
 }
 
 .step-line {
   width: 2px;
-  height: 32px;
-  margin-top: 6px;
+  min-height: 24px;
+  height: 100%;
+  margin: 0;
   border-left: 2px solid;
+  flex-shrink: 0;
 }
+
 
 .step-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding-top: 6px;
 }
 
 .step-circle,
@@ -165,6 +174,13 @@ body{
   gap: 24px;
 }
 
+.step form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
 .step-header {
   padding-bottom: 12px;
   border-bottom: 2px solid;
@@ -218,7 +234,41 @@ select {
   flex-direction: column;
   gap: 8px;
 }
+/* ERROR MESSAGES */
+.error-message {
+  display: none;
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+  padding-left: 4px;
+  min-height: 16px;
+}
 
+.error-message:not(:empty) {
+  display: block;
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-width: 2px;
+  border-color: #d32f2f;
+}
+
+input.error:focus,
+select.error:focus,
+textarea.error:focus {
+  outline: 2px solid rgb(0, 0, 0);
+  outline-offset: 2px;
+}
+
+
+.skill-level .error-message,
+.platforms .error-message,
+.avatar-grid .error-message,
+.theme-grid .error-message {
+  margin-top: 8px;
+}
 .skill-level {
   display: flex;
   gap: 16px;
@@ -272,17 +322,21 @@ select {
   align-items: center;
   justify-content: space-evenly;
   gap: 6px;
+  position: relative;
 }
 
-.avatar {
+.avatar-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.avatar-card img {
   width: 80px;
   height: 80px;
-  border: 1px solid;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
+
 
 .theme-grid {
   display: flex;
@@ -294,6 +348,15 @@ select {
   padding: 16px;
   border: 1px solid;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.theme-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
 }
 
 .step-footer {
@@ -310,6 +373,28 @@ button {
   border-radius: 25px;
   border: 1px solid;
   cursor: pointer;
+}
+
+.btn-next,
+.btn-submit {
+  background: var(--active-color);
+  color: white;
+  border-color: var(--active-color);
+}
+
+.btn-next:hover,
+.btn-submit:hover {
+  background: #b03a47;
+}
+
+.btn-back {
+  background: transparent;
+  color: var(--active-color);
+  border-color: var(--active-color);
+}
+
+.btn-back:hover {
+  background: rgba(200, 75, 87, 0.1);
 }
 
 
@@ -360,12 +445,15 @@ button {
 
 .platform-card:has(input:checked) {
   border-color: var(--active-color);
-  background: rgba(200, 75, 87, 0.08);
+  background: rgba(191, 40, 55, 0.719);
 }
 
 .avatar-card {
   cursor: pointer;
   transition: 0.2s ease;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .avatar-card:has(input:checked) {
@@ -383,4 +471,30 @@ button {
 }
 .platform-card:has(input:checked) .material-icons {
   color: var(--active-color);
+}
+
+
+.success-step {
+  display: none;
+}
+
+.success-step.active {
+  display: flex;
+}
+
+.success-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.success-message {
+  text-align: center;
+}
+
+.success-message p {
+  font-size: 20px;
+  color: var(--active-color);
+  font-weight: 500;
 }
